@@ -1,0 +1,84 @@
+a {
+  color: #4374d9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0000;
+}
+
+.alternate-row {
+  background: #f8f8f8;
+}
+
+.blue-column {
+  color: blue;
+}
+
+.bold-cell {
+  font-weight: bold;
+  background-color: greenyellow;
+}
+
+html {
+  height: 100%;
+  margin: 5px 5px 0px 5px;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  overflow: hidden;
+}
+#actions {
+  height: 50px;
+}
+#realgrid {
+  width: 100%;
+  height: calc(100% - 50px - 10px); /* 10px는 margin */
+  height: -moz-calc(100% - 50px - 10px); /* for Firefox */
+  height: -webkit-calc(100% - 50px - 10px); /* for WebKit */
+  height: -o-calc(100% - 50px - 10px); /* for Opera */
+  height: expression(100% - 50px - 10px); /* IE Old */
+}
+.test-style {
+  background: linear-gradient(to right, #96f58f, red);
+}
+
+.right-column {
+  text-align: right;
+}
+
+.left-column {
+  text-align: left;
+}
+
+.red-bar-solid .rg-bar-renderer-bar {
+  background: #ff0000;
+}
+
+.green-bar-solid .rg-bar-renderer-bar-right {
+  background: #00ff00;
+}
+
+.blue-bar-solid .rg-bar-renderer-bar-top {
+  background: #0000ff;
+}
+
+.yellow-bar-solid .rg-bar-renderer-bar-bottom {
+  background: #ffff00;
+}
+
+.green-hidden span {
+  right: 12% !important;
+  transform: translate(0%, -50%) !important;
+  display: none !important;
+}
+
+.yellow-column {
+  background: #ffff00
+}
+
+.cursor {
+  cursor: crosshair;
+}
