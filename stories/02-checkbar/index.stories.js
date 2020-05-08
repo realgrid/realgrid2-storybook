@@ -80,7 +80,7 @@ export const checkAll = () => {
 export const checkItem = () => {
   useEffect(() => {
     const { gridView } = init();
-    gridView.checkItem(1);
+    gridView.checkItem(2);
   });
 
   return container;
