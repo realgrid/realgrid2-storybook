@@ -24,3 +24,4 @@ yarn-error.log*
 
 .now
 storybook-static
+.jest-test-results.json

@@ -2,22 +2,28 @@
   "name": "realgrid-sb-html",
   "version": "0.1.0",
   "main": "index.js",
+  "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook -s ./public"
+    "build-storybook": "build-storybook -s ./public",
+    "chromatic": "chromatic --project-token=jeuw4zve2o"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-jest": "^5.3.18",
     "@storybook/addon-notes": "^5.3.18",
+    "@storybook/addon-storyshots": "^5.3.18",
     "@storybook/addon-storysource": "^5.3.18",
     "@storybook/client-api": "^5.3.18",
     "@storybook/html": "^5.3.18",
-    "babel-loader": "^8.1.0"
-  },
-  "description": ""
+    "babel-jest": "^26.0.1",
+    "babel-loader": "^8.1.0",
+    "chromatic": "^4.0.2",
+    "jest": "^26.0.1"
+  }
 }
