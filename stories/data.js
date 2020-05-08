@@ -17,7 +17,7 @@ export const data01 = [
   },
   {
     KorName: '김덕중',
-    SexLabel: '여',
+    SexLabel: '남',
     Age: '53',
     Phone: '(064)5483-6874',
     StartDate: '2018-12-30',
