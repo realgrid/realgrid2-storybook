@@ -76,3 +76,12 @@ export const checkAll = () => {
 
   return container;
 };
+
+export const checkItem = () => {
+  useEffect(() => {
+    const { gridView } = init();
+    gridView.checkItem(2);
+  });
+
+  return container;
+};
