@@ -85,3 +85,12 @@ export const checkItem = () => {
 
   return container;
 };
+
+export const checkItem2 = () => {
+  useEffect(() => {
+    const { gridView } = init();
+    gridView.checkItem(1);
+  });
+
+  return container;
+};
