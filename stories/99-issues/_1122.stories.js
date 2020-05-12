@@ -1,11 +1,11 @@
 import { document } from 'global';
 import { action } from '@storybook/addon-actions';
 import { useEffect } from '@storybook/client-api';
-import container from './container.html';
 
-import { fields01 } from '../fields';
-import { columns01 } from '../columns';
-import { data01 } from '../data';
+import container from '../__share/container.html';
+import { fields01 } from '../__share/fields';
+import { columns01 } from '../__share/columns';
+import { data01 } from '../__share/data';
 
 export default {
   title: '99-이슈 확인',
