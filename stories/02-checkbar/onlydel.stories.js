@@ -2,30 +2,16 @@ import { document } from 'global';
 import { action } from '@storybook/addon-actions';
 import { useEffect } from '@storybook/client-api';
 
-import container from '../__share/container.html';
-import { fields01 } from '../__share/fields';
-import { columns01 } from '../__share/columns';
-import { data01 } from '../__share/data';
+import container from '../_common/container.html';
+import init from '../_common/init';
 
 export default {
   title: '02-체크바',
 };
 
-const init = () => {
-  const dataProvider = new RealGrid.LocalDataProvider();
-  const gridView = new RealGrid.GridView('realgrid');
-  gridView.setDataSource(dataProvider);
-
-  dataProvider.setFields(fields01);
-  gridView.setColumns(columns01);
-  dataProvider.setRows(data01);
-
-  return { gridView, dataProvider };
-};
-
 export const 체크바보이기 = () => {
   useEffect(() => {
-    init();
+    init('realgrid');
   });
 
   return container;
@@ -33,7 +19,7 @@ export const 체크바보이기 = () => {
 
 export const 체크바_넓이40 = () => {
   useEffect(() => {
-    const { gridView } = init();
+    const { gridView } = init('realgrid');
     gridView.checkBar.width = 40;
   });
 
@@ -42,7 +28,7 @@ export const 체크바_넓이40 = () => {
 
 export const 체크바감추기 = () => {
   useEffect(() => {
-    const { gridView } = init();
+    const { gridView } = init('realgrid');
     gridView.checkBar.visible = false;
   });
 
@@ -51,7 +37,7 @@ export const 체크바감추기 = () => {
 
 export const 체크바_모두체크감추기 = () => {
   useEffect(() => {
-    const { gridView } = init();
+    const { gridView } = init('realgrid');
     gridView.checkBar.showAll = false;
   });
 
@@ -60,7 +46,7 @@ export const 체크바_모두체크감추기 = () => {
 
 export const checkAll = () => {
   useEffect(() => {
-    const { gridView } = init();
+    const { gridView } = init('realgrid');
     gridView.checkAll(true);
 
     // 헤드의 체크를 강제로 dispatch했지만 각행의 checkbox는 checked 되지 않았다.
@@ -79,17 +65,8 @@ export const checkAll = () => {
 
 export const checkItem = () => {
   useEffect(() => {
-    const { gridView } = init();
+    const { gridView } = init('realgrid');
     gridView.checkItem(2);
-  });
-
-  return container;
-};
-
-export const checkItem2 = () => {
-  useEffect(() => {
-    const { gridView } = init();
-    gridView.checkItem(1);
   });
 
   return container;

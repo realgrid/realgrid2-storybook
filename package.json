@@ -6,7 +6,7 @@
   "scripts": {
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
-    "chromatic": "chromatic --project-token=qmxn6x1uac"
+    "chromatic": "chromatic --project-token=jeuw4zve2o"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +16,11 @@
     "@babel/preset-env": "^7.9.6",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-notes": "^5.3.18",
+    "@storybook/addon-storyshots": "^5.3.18",
     "@storybook/addon-storysource": "^5.3.18",
     "@storybook/client-api": "^5.3.18",
     "@storybook/html": "^5.3.18",
+    "babel-loader": "^8.1.0",
     "chromatic": "^4.0.2"
   }
 }
