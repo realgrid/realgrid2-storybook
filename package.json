@@ -6,7 +6,8 @@
   "scripts": {
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
-    "chromatic": "chromatic --project-token=qmxn6x1uac"
+    "chromatic": "chromatic --project-token=qmxn6x1uac",
+    "onlydel": "chromatic --project-token=k8g8fv8hty"
   },
   "keywords": [],
   "author": "",

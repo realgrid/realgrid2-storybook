@@ -1,5 +1,13 @@
 export const data01 = [
   {
+    KorName: 'Jams',
+    SexLabel: '남',
+    Age: '62',
+    Phone: '(093)8809-8696',
+    StartDate: '2019-10-21',
+    EndDate: '2022-12-11',
+  },
+  {
     KorName: '박영호2',
     SexLabel: '남',
     Age: '71',
