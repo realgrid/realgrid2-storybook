@@ -46,3 +46,16 @@ export const 헤더속성_기본값 = () => {
 
   return container;
 };
+
+export const 헤더체크컬럼 = () => {
+  useEffect(() => {
+    const { gridView } = init('realgrid');
+
+    const checkColumn = gridView.columnByName('KorName');
+    checkColumn.header.checkLocation = 'left';
+    checkColumn.checked = true;
+    gridView.setColumn(checkColumn);
+  });
+
+  return container;
+};
