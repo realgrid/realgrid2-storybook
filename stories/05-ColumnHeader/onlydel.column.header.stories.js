@@ -42,6 +42,7 @@ export const 툴팁 = () => {
     gridView.setHeader({ height: 60 });
 
     const checkColumn = gridView.columnByName('SexLabel');
+    checkColumn.header.showTooltip = true;
     checkColumn.header.tooltip = '젠더';
     gridView.setColumn(checkColumn);
   });
