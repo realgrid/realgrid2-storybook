@@ -27,7 +27,7 @@ export const 헤더높이_60 = () => {
 
     setTimeout(() => {
       const header = gridView.getHeader();
-      renderMessage(header.height === 60 ? '헤더높이 60 맞네' : new Error('헤더높이 60 아닌데'));
+      renderMessage(header.height === 61 ? '헤더높이 60 맞네' : new Error('헤더높이 60 아닌데'));
     }, 100);
   });
 
