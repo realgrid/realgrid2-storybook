@@ -21,13 +21,29 @@ export const 헤더체크컬럼 = () => {
   return container;
 };
 
-export const displayText = () => {
+export const text_displayText = () => {
   useEffect(() => {
     const { gridView } = init('realgrid');
 
     const checkColumn = gridView.columnByName('SexLabel');
+    checkColumn.header.text = '젠더';
+    gridView.setColumn(checkColumn);
+
     const text = checkColumn.header.displayText;
-    renderMessage(`SexLabel 컬럼헤더: ${text}`);
+    renderMessage(`SexLabel 컬럼헤더: 젠더 = ${text === '젠더'}`);
+  });
+
+  return container;
+};
+
+export const 툴팁 = () => {
+  useEffect(() => {
+    const { gridView } = init('realgrid');
+    gridView.setHeader({ height: 60 });
+
+    const checkColumn = gridView.columnByName('SexLabel');
+    checkColumn.header.tooltip = '젠더';
+    gridView.setColumn(checkColumn);
   });
 
   return container;

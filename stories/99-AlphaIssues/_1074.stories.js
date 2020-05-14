@@ -6,7 +6,7 @@ import init from '../_common/init';
 
 /** 컴포넌트 */
 export default {
-  title: '99-이슈 확인',
+  title: '99-알파버전 이슈',
 };
 
 export const _1074 = () => {
