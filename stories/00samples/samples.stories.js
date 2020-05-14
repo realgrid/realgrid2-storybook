@@ -1,5 +1,4 @@
 import { useEffect } from '@storybook/client-api';
-import { action } from '@storybook/addon-actions';
 import { renderMessage } from '../_common/utils';
 
 export default {
@@ -13,7 +12,7 @@ export const 샘플_스토리1 = () => {
     gridView.setDataSource(dataProvider);
 
     document.getElementById('realgrid').addEventListener('focusin', () => {
-      renderMessage('포커스 올라왔습니다.');
+      renderMessage(new Error('Error'));
     });
 
     setTimeout(() => {
