@@ -16,10 +16,8 @@ export const createButton = (title, onClick) => {
 export const renderMessage = (msg) => {
   const msgelem = document.getElementById('msgelem');
   if (!msgelem) throw new Error('renderMessage()에 msgelem 필요.');
+  console.log(msg);
 
   msgelem.innerHTML = msg;
-
-  if (msg instanceof Error) {
-    msgelem.style = 'color: red;';
-  }
+  msgelem.style = msg instanceof Error ? 'color: red;' : 'color: green';
 };
