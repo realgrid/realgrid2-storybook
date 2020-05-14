@@ -9,10 +9,17 @@ export const createButton = (title, onClick) => {
   container.appendChild(button);
 };
 
-/** 그리드 아래쪽에 상태를 표시하기 위한 용도로 text를 뿌려준다. */
+/** 
+ * 그리드 아래쪽에 상태를 표시하기 위한 용도로 텍스트를 뿌려준다. 
+ * - msg가 Error 면 빨간색 텍스트
+ */
 export const renderMessage = (msg) => {
   const msgelem = document.getElementById('msgelem');
   if (!msgelem) throw new Error('renderMessage()에 msgelem 필요.');
 
   msgelem.innerHTML = msg;
+
+  if (msg instanceof Error) {
+    msgelem.style = 'color: red;';
+  }
 };
