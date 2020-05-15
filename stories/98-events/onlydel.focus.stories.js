@@ -1,8 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-
-import container from '../_common/container.html';
-import init from '../_common/init';
-import { renderMessage } from '../_common/utils';
+import { gridContainer, init, renderMessage } from '../_common';
 
 export default {
   title: '98-이벤트',
@@ -20,5 +17,5 @@ export const 포커스 = () => {
     }, 100);
   });
 
-  return container;
+  return gridContainer();
 };

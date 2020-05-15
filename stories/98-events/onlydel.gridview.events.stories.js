@@ -1,8 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { action } from '@storybook/addon-actions';
-
-import container from '../_common/container.html';
-import init from '../_common/init';
+import { gridContainer, init } from '../_common';
 
 /** 컴포넌트 */
 export default {
@@ -26,5 +23,5 @@ export const onShowEditor = () => {
     }, 100);
   });
 
-  return container;
+  return gridContainer();
 }

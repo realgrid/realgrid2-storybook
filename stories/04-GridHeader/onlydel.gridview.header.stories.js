@@ -1,11 +1,8 @@
 import { useEffect } from '@storybook/client-api';
-
-import container from '../_common/container.html';
-import init from '../_common/init';
-import { renderMessage } from '../_common/utils';
+import { gridContainer, init, renderMessage } from '../_common';
 
 export default {
-  title: '04-그리드 헤더',
+  title: '04-Gridheader',
 };
 
 export const 헤더감추기 = () => {
@@ -15,7 +12,7 @@ export const 헤더감추기 = () => {
     gridView.setHeader({ visible: false });
   });
 
-  return container;
+  return gridContainer();
 };
 
 /** header.height 가 정확히 60인지 확인 하는 방법 */
@@ -31,7 +28,7 @@ export const 헤더높이_60 = () => {
     }, 100);
   });
 
-  return container;
+  return gridContainer();
 };
 
 export const 헤더속성_기본값 = () => {
@@ -44,5 +41,5 @@ export const 헤더속성_기본값 = () => {
     }, 100);
   });
 
-  return container;
+  return gridContainer();
 };
