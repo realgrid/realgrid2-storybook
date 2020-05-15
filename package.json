@@ -7,7 +7,7 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
     "chromatic": "#chromatic --project-token=6flo2ae3i0i",
-    "onlydel": "chromatic --project-token=1o5mrkuzhed"
+    "onlydel": "chromatic --project-token=1o5mrkuzhed --exit-zero-on-changes --auto-accept-changes"
   },
   "keywords": [],
   "author": "",

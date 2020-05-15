@@ -1,10 +1,22 @@
 <div>
   <style>
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .grid {
+      width: 500px;
+      height: 300px;
+    }
+
     .msg-container {
       width: 500px;
       overflow-wrap: break-word;
+      margin-top: 16px;
     }
   </style>
-  <div style="width: 500px; height: 300px" id="realgrid"></div>
-  <div class="msg-container" id="msgelem"></div>
+  <div id="container">
+    <div class="msg-container" id="msgelem"></div>
+  </div>
 </div>

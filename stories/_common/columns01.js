@@ -24,6 +24,8 @@ export const columns01 = [
     },
     header: {
       text: '성별',
+      showTooltip: true,
+      tooltip: 'test',
     },
     renderer: {
       type: 'text',

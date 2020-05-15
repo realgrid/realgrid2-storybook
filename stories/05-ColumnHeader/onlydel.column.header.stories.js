@@ -1,8 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-
-import container from '../_common/container.html';
-import init from '../_common/init';
-import { renderMessage } from '../_common/utils';
+import { gridContainer, init, renderMessage } from '../_common';
 
 export default {
   title: '05-컬럼 헤더',
@@ -18,7 +15,7 @@ export const 헤더체크컬럼 = () => {
     gridView.setColumn(checkColumn);
   });
 
-  return container;
+  return gridContainer();
 };
 
 export const text_displayText = () => {
@@ -33,19 +30,21 @@ export const text_displayText = () => {
     renderMessage(`SexLabel 컬럼헤더: 젠더 = ${text === '젠더'}`);
   });
 
-  return container;
+  return gridContainer();
 };
 
 export const 툴팁 = () => {
   useEffect(() => {
     const { gridView } = init('realgrid');
-    gridView.setHeader({ height: 60 });
+    gridView.setHeader({ height: 60, showToolTop: true, tooltip: '젠더' });
 
-    const checkColumn = gridView.columnByName('SexLabel');
-    checkColumn.header.showTooltip = true;
-    checkColumn.header.tooltip = '젠더';
-    gridView.setColumn(checkColumn);
+    // setTimeout(() => {
+    //   const checkColumn = gridView.columnByName('SexLabel');
+    //   checkColumn.header.showTooltip = true;
+    //   checkColumn.header.tooltip = '젠더';
+    //   gridView.setColumn(checkColumn);
+    // });
   });
 
-  return container;
+  return gridContainer();
 };

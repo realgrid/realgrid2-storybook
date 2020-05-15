@@ -1,8 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-
-import container from '../_common/container.html';
-import init from '../_common/init';
-import { renderMessage } from '../_common/utils';
+import { gridContainer, init, renderMessage } from '../_common';
 
 export default {
   title: '03-Selection',
@@ -25,7 +22,7 @@ export const setSelectionBlock = () => {
   });
 
 
-  return container;
+  return gridContainer();
 };
 
 export const setSelectionColumns = () => {
@@ -52,5 +49,5 @@ export const setSelectionColumns = () => {
   });
 
 
-  return container;
+  return gridContainer();
 };

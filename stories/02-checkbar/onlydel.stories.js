@@ -1,9 +1,6 @@
-import { document } from 'global';
-import { action } from '@storybook/addon-actions';
 import { useEffect } from '@storybook/client-api';
 
-import container from '../_common/container.html';
-import init from '../_common/init';
+import { gridContainer, init } from '../_common';
 
 export default {
   title: '02-체크바',
@@ -14,7 +11,7 @@ export const 체크바보이기 = () => {
     init('realgrid');
   });
 
-  return container;
+  return gridContainer();
 };
 
 export const 체크바_넓이40 = () => {
@@ -23,7 +20,7 @@ export const 체크바_넓이40 = () => {
     gridView.checkBar.width = 40;
   });
 
-  return container;
+  return gridContainer();
 };
 
 export const 체크바감추기 = () => {
@@ -32,7 +29,7 @@ export const 체크바감추기 = () => {
     gridView.checkBar.visible = false;
   });
 
-  return container;
+  return gridContainer();
 };
 
 export const 체크바_모두체크감추기 = () => {
@@ -41,7 +38,7 @@ export const 체크바_모두체크감추기 = () => {
     gridView.checkBar.showAll = false;
   });
 
-  return container;
+  return gridContainer();
 };
 
 export const checkAll = () => {
@@ -60,7 +57,7 @@ export const checkAll = () => {
     // }, 1000);
   });
 
-  return container;
+  return gridContainer();
 };
 
 export const checkItem = () => {
@@ -69,5 +66,5 @@ export const checkItem = () => {
     gridView.checkItem(2);
   });
 
-  return container;
+  return gridContainer();
 };

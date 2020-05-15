@@ -2,7 +2,7 @@ import { fields01 } from './fields01';
 import { columns01 } from './columns01';
 import { data01 } from './data01';
 
-const init = (containerId) => {
+export const init = (containerId) => {
   if (!containerId) throw new Error('init()에 containerId 필요.');
 
   const container = document.getElementById(containerId);
@@ -16,5 +16,3 @@ const init = (containerId) => {
 
   return { gridView, dataProvider, container };
 };
-
-export default init;
