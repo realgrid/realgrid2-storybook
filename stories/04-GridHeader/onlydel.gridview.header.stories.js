@@ -2,7 +2,7 @@ import { useEffect } from '@storybook/client-api';
 import { gridContainer, init, renderMessage } from '../_common';
 
 export default {
-  title: '04-그리드 헤더',
+  title: '04-Gridheader',
 };
 
 export const 헤더감추기 = () => {
