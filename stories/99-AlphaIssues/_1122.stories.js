@@ -7,8 +7,8 @@ export default {
 
 export const _1122 = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
-    setTimeout(() => {
+    init('realgrid', ({ gridView }) => {
+      // 이건 너무 복잡하지?
       gridView.setHeader({ visible: false });
     }, 100);
   });

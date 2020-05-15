@@ -7,14 +7,13 @@ export default {
 
 export const 포커스 = () => {
   useEffect(() => {
-    const { gridView, container } = init('realgrid');
+    const { gridView, container } = init('realgrid', () => {
+      gridView.setFocus();
+    }, 100);
+
     container.addEventListener('focusin', () => {
       renderMessage('포커스 됨');
     });
-
-    setTimeout(() => {
-      gridView.setFocus();
-    }, 100);
   });
 
   return gridContainer();

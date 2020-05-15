@@ -8,19 +8,17 @@ export default {
 
 export const _1074 = () => {
   useEffect(() => {
-    const { gridView, container } = init('realgrid');
+    const { gridView } = init('realgrid', () => {
+      // 이게 된다고?
+      gridView.setFocus();
+      gridView.showEditor();
+    }, 100);
 
     gridView.onShowEditor = (grid, index, props, attrs) => {
       if (index.column == "KorName") {
         props.textCase = 'upper';
       }
     }
-
-    /** 이 정도는 스냅샷이 찍혀줍니다. */
-    setTimeout(() => {
-      gridView.setFocus();
-      gridView.showEditor();
-    }, 100);
   });
 
   return gridContainer();
