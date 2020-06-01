@@ -1,17 +1,23 @@
 import { useEffect } from '@storybook/client-api';
+import { renderMessage } from '../_common';
 import './style.css';
 
 export default {
   title: '01-빈그리드'
 };
 
-const container = '<div class="container" id="realgrid"></div>';
+const container = `
+<div class="container" id="realgrid"></div>
+<div id="msgelem"></div>
+`;
 
 export const 빈그리드 = () => {
   useEffect(() => {
     const dataProvider = new RealGrid.LocalDataProvider();
     const gridView = new RealGrid.GridView('realgrid');
     gridView.setDataSource(dataProvider);
+
+    renderMessage(RealGrid.getVersion());
   });
 
   return container;
