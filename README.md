@@ -12,8 +12,10 @@
   - 예: package.json 파일 scripts.onlydel
 - storybook 브랜치로 commit and push
 - master 브랜치로 머지 PR 요청
-- [UI 테스트]realgrid 크로매틱 계정으로 배포
-  - `npm run chromatic`
+  - github action 으로 크로매틱 계정 배포
+  - 또는 수동으로 `npm run chromatic` 실행 배포
+- [크로매틱 마지막 빌드](https://www.chromatic.com/builds?appId=5ebd775e742ec8002267b88d&branch=storybook) 에서 UI 테스트
+- [크로매틱 PR](https://www.chromatic.com/pullrequests?appId=5ebd775e742ec8002267b88d) 에서 PR 승인
 
 _## 스토리북 저장소 포크_
 
