@@ -1,5 +1,5 @@
 import { useEffect } from "@storybook/client-api";
-import { renderMessage } from "../_common";
+import { renderMessage, fields01, columns01 } from "../_common";
 import "./style.css";
 
 export default {
@@ -70,6 +70,20 @@ export const provider_view_생성후_연결 = () => {
     const dataProvider = new RealGrid.LocalDataProvider();
     const gridView = new RealGrid.GridView("realgrid");
     gridView.setDataSource(dataProvider);
+  });
+
+  return container;
+};
+
+/**
+ * 컬럼이나 필드생성없이 DataProvider의 함수를 호출할 경우 의도치 않은 오류 메시지
+ */
+export const 컬럼필드없이_API호출 = () => {
+  useEffect(() => {
+    const dataProvider = new RealGrid.LocalDataProvider();
+    const gridView = new RealGrid.GridView("realgrid");
+    gridView.setDataSource(dataProvider);
+    dataProvider.setRowCount(10);
   });
 
   return container;
