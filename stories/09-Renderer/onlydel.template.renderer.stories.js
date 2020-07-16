@@ -94,13 +94,12 @@ export const valueCallback호출테스트 = () => {
 
     const renderer = {
       type: "html",
-      template:
-        "<span style='color: ${value}'>${value}</span> : <span style='color: #fff; background-color: ${value}'>${value}</span>",
+      template: "<span style='color: ${some}'>${thing}</span>",
       valueCallback: (grid, model, field) => {
+        console.log(grid, model, field);
         renderMessage("valueCallback이 호출되었습니다.");
-
-        const { value } = model;
-        return "valueCallback";
+        if (field === "some") return model.value;
+        if (field === "thing") return `색깔은 ${model.value} 입니다.`;
       },
     };
 
