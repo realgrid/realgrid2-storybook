@@ -1,12 +1,12 @@
-import { fields01 } from "./fields01";
-import { columns01 } from "./columns01";
-import { data01 } from "./data01";
+import { fields01 } from './fields01';
+import { columns01 } from './columns01';
+import { data01 } from './data01';
 
 /**
  * provider, viewer 생성
  */
 export const init0 = (containerId) => {
-  if (!containerId) throw new Error("init()에 containerId 필요.");
+  if (!containerId) throw new Error('init()에 containerId 필요.');
 
   const container = document.getElementById(containerId);
   const dataProvider = new RealGrid.LocalDataProvider();
@@ -21,6 +21,16 @@ export const init0 = (containerId) => {
 export const init1 = (containerId) => {
   const { container, dataProvider, gridView } = init0(containerId);
   gridView.setDataSource(dataProvider);
+
+  return { container, dataProvider, gridView };
+};
+
+/**
+ * provider, viewer 생성 + 연결 + 필드 채우기
+ */
+export const initFields = (containerId, fields) => {
+  const { container, dataProvider, gridView } = init1(containerId);
+  dataProvider.setFields(fields || fields01);
 
   return { container, dataProvider, gridView };
 };

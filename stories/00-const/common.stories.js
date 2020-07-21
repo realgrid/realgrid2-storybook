@@ -9,4 +9,4 @@ export default {
 export const column01 = () => {
   return withContainer('pre', JSON.stringify(columns01, null, 2));
   // return `<pre style="width: 500px;">${JSON.stringify(columns01, null, 2)}</pre>`;
-}
+};

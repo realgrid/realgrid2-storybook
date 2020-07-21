@@ -1,4 +1,4 @@
-import { useEffect } from "@storybook/client-api";
+import { useEffect } from '@storybook/client-api';
 import {
   init0,
   init1,
@@ -6,10 +6,10 @@ import {
   gridContainer,
   renderMessage,
   fields01,
-} from "../_common";
+} from '../_common';
 
 export default {
-  title: "08-데이터",
+  title: '08-데이터',
 };
 
 const AGE_ROWS = [
@@ -41,7 +41,7 @@ export const View없이Provider채우기 = () => {
 
 export const setRowCount = () => {
   useEffect(() => {
-    const { dataProvider } = init2("realgrid");
+    const { dataProvider } = init2('realgrid');
     try {
       dataProvider.setRowCount(10);
     } catch (e) {
@@ -54,7 +54,7 @@ export const setRowCount = () => {
 
 export const setRowCountAndSetRows = () => {
   useEffect(() => {
-    const { dataProvider } = init2("realgrid");
+    const { dataProvider } = init2('realgrid');
     dataProvider.setRowCount(10);
     dataProvider.setRows(AGE_ROWS);
   });
@@ -64,7 +64,7 @@ export const setRowCountAndSetRows = () => {
 
 export const justSetRows = () => {
   useEffect(() => {
-    const { dataProvider } = init2("realgrid");
+    const { dataProvider } = init2('realgrid');
     dataProvider.setRows(AGE_ROWS);
   });
 
@@ -73,7 +73,7 @@ export const justSetRows = () => {
 
 export const getRows = () => {
   useEffect(() => {
-    const { dataProvider } = init2("realgrid");
+    const { dataProvider } = init2('realgrid');
     dataProvider.setRows(AGE_ROWS);
 
     renderMessage(dataProvider.getRows());
@@ -87,7 +87,7 @@ export const getRows = () => {
  */
 export const setRowCount0 = () => {
   useEffect(() => {
-    const { dataProvider } = init2("realgrid");
+    const { dataProvider } = init2('realgrid');
     dataProvider.setRows(AGE_ROWS);
     dataProvider.setRowCount(0);
 
@@ -101,7 +101,7 @@ export const setRowCount0 = () => {
 
 export const removeRows = () => {
   useEffect(() => {
-    const { dataProvider } = init2("realgrid");
+    const { dataProvider } = init2('realgrid');
     dataProvider.setRows(AGE_ROWS);
 
     dataProvider.removeRow(1);

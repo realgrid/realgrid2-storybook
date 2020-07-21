@@ -11,10 +11,10 @@ export const onShowEditor = () => {
     const { gridView, container } = init('realgrid');
 
     gridView.onShowEditor = (grid, index, props, attrs) => {
-      if (index.column == "KorName") {
+      if (index.column == 'KorName') {
         props.textCase = 'upper';
       }
-    }
+    };
 
     /** 이 정도는 스냅샷이 찍혀줍니다. */
     setTimeout(() => {
@@ -24,4 +24,4 @@ export const onShowEditor = () => {
   });
 
   return gridContainer();
-}
+};
