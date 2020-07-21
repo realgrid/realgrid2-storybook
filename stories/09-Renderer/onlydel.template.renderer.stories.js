@@ -56,6 +56,33 @@ export const template속성 = () => {
   return gridContainer();
 };
 
+/**
+ * issue #1384 https://github.com/realgrid/realgriddom/issues/1384
+ * 콘솔 에러 확인
+ */
+export const _1384 = () => {
+  useEffect(() => {
+    const { dataProvider, gridView } = init1('realgrid');
+
+    dataProvider.setFields(fields);
+    gridView.setColumns(columns01);
+
+    dataProvider.setRows(data);
+
+    const renderer = {
+      type: 'html',
+      template: `
+        <span style='color: ${value}'>${value}</span> : 
+        <span style='color: #fff; background-color: ${value}'>${value}</span>
+        `,
+    };
+
+    gridView.setColumnProperty('templateColumn', 'renderer', renderer);
+  });
+
+  return gridContainer();
+};
+
 export const callback속성 = () => {
   useEffect(() => {
     const { dataProvider, gridView } = init1('realgrid');

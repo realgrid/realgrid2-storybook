@@ -47,7 +47,11 @@ export const blankwhencopy속성 = () => {
   return gridContainer();
 };
 
-export const blankwhenexport속성 = () => {
+/**
+ * issue #1398
+ * https://github.com/realgrid/realgriddom/issues/1398
+ */
+export const _1398 = () => {
   useEffect(() => {
     const { dataProvider, gridView } = initFields('realgrid');
     dataProvider.setRows(data01);
@@ -56,7 +60,6 @@ export const blankwhenexport속성 = () => {
       {
         name: 'KorName',
         fieldName: 'KorName',
-        blankWhenExport: true,
       },
       {
         name: 'Age',
@@ -66,12 +69,43 @@ export const blankwhenexport속성 = () => {
     ]);
 
     setTimeout(() => {
-      const value = gridView.exportGrid({
+      gridView.exportGrid({
         type: 'csv',
       });
 
       const prop = gridView.getColumnProperty('Age', 'blankWhenExport');
-      renderMessage(`blankWhenExport: ${prop} <br> copied: ${value}`);
+      renderMessage(`blankWhenExport: ${prop}`);
+    }, 300);
+  });
+
+  return gridContainer();
+};
+
+export const blankwhenexport속성 = () => {
+  useEffect(() => {
+    const { dataProvider, gridView } = initFields('realgrid');
+    dataProvider.setRows(data01);
+
+    gridView.setColumns([
+      {
+        name: 'KorName',
+        fieldName: 'KorName',
+        blankWhenExport: false,
+      },
+      {
+        name: 'Age',
+        fieldName: 'Age',
+        blankWhenExport: true,
+      },
+    ]);
+
+    setTimeout(() => {
+      gridView.exportGrid({
+        type: 'csv',
+      });
+
+      const prop = gridView.getColumnProperty('Age', 'blankWhenExport');
+      renderMessage(`blankWhenExport: ${prop}`);
     }, 300);
   });
 
