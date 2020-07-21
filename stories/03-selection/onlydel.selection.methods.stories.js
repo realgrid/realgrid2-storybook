@@ -21,7 +21,6 @@ export const setSelectionBlock = () => {
     }, 100);
   });
 
-
   return gridContainer();
 };
 
@@ -47,7 +46,6 @@ export const setSelectionColumns = () => {
       }
     }, 100);
   });
-
 
   return gridContainer();
 };

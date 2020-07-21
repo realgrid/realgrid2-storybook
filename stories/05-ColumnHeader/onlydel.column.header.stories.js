@@ -48,13 +48,17 @@ export const text_displayText = () => {
 
 export const 툴팁 = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid', () => {
-      const checkColumn = gridView.columnByName('SexLabel');
-      checkColumn.header.showTooltip = true;
-      checkColumn.header.as = '젠더';
-      gridView.setColumn(checkColumn);
-      gridView.setHeader({ height: 60, showToolTop: true, tooltip: '젠더' });
-    }, 500);
+    const { gridView } = init(
+      'realgrid',
+      () => {
+        const checkColumn = gridView.columnByName('SexLabel');
+        checkColumn.header.showTooltip = true;
+        checkColumn.header.as = '젠더';
+        gridView.setColumn(checkColumn);
+        gridView.setHeader({ height: 60, showToolTop: true, tooltip: '젠더' });
+      },
+      500
+    );
   });
 
   return gridContainer();
