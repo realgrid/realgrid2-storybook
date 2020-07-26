@@ -2,7 +2,7 @@ import { useEffect } from '@storybook/client-api';
 import { gridContainer, init } from '../_common';
 
 export default {
-  title: '10-컬럼-Layout',
+  title: '10-컬럼-GroupLayoutInfo',
 };
 
 export const setColumnLayout = () => {
