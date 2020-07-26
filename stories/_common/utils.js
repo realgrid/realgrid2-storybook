@@ -19,8 +19,12 @@ export const renderMessage = (msg) => {
   const msgelem = document.getElementById('msgelem');
   if (!msgelem) throw new Error('renderMessage()에 msgelem 필요.');
 
-  msgelem.innerHTML = msg;
   msgelem.style = msg instanceof Error ? 'color: red;' : 'color: green';
+
+  const msgTag = document.createElement('div');
+  msgTag.innerHTML = msg;
+  msgelem.appendChild(msgTag);
+  // msgelem.innerHTML = msg;
 };
 
 /** container.html 대체 */
