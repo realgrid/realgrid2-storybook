@@ -7,9 +7,9 @@ export default {
 
 export const _1122 = () => {
   useEffect(() => {
-    initDataset(1);
+    const { gridView } = initDataset(1);
 
-    setTimeout(({ gridView }) => {
+    setTimeout(() => {
       // 이건 너무 복잡하지?
       gridView.setHeader({ visible: false });
     }, 100);
