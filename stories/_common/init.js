@@ -61,6 +61,13 @@ import * as ds from './dataset';
 //   return { gridView, dataProvider, container };
 // };
 
+/**
+ * realgrid 초기 구성 함수
+ * @param {string} containerId 필수, 컨테이너 아이디
+ * @param {string} fields 필드 모듈명
+ * @param {string} columns 컬럼 모듈명
+ * @param {string} data 데이터 모듈명
+ */
 export const initCustom = (containerId, fields, columns, data) => {
   /** containerId 필수 */
   const container = document.getElementById(containerId);
@@ -75,15 +82,15 @@ export const initCustom = (containerId, fields, columns, data) => {
   return { container, dataProvider, gridView };
 };
 
-export const initDataset1 = () => {
-  const fields = ds['fields1'];
-  return initCustom('realgrid', fields, ds.columns1, ds.data1);
-};
-
-export const initDataset2 = () => {
-  return initCustom('realgrid', ds.fields2, ds.columns2, ds.data2);
-};
-
-export const initDataset3 = () => {
-  return initCustom('realgrid', ds.fields3, ds.columns3, ds.data3);
+/**
+ *
+ * - dataset 디렉토리에서 (fields1, columns1, data1)과 같은 셑으로 그리드를 구성할 경우
+ *   setNumber를 1로 넘기면 됩니다.
+ * - 그외의 경우는 initCustom을 이용하면 됩니다.
+ */
+export const initDataset = (setNumber) => {
+  const fields = ds[`fields${setNumber}`];
+  const columns = ds[`columns${setNumber}`];
+  const data = ds[`data${setNumber}`];
+  return initCustom('realgrid', fields, columns, data);
 };

@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, initDataset1 } from '../_common';
+import { gridContainer, initDataset } from '../_common';
 
 /** 컴포넌트 */
 export default {
@@ -8,7 +8,7 @@ export default {
 
 export const _1074 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
 
     setTimeout(() => {
       gridView.setFocus();

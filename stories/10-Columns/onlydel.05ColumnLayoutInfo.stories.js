@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, initDataset1 } from '../_common';
+import { gridContainer, initDataset } from '../_common';
 
 export default {
   title: '10-컬럼-ColumnLayoutInfo',
@@ -7,7 +7,7 @@ export default {
 
 export const column = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',
@@ -29,7 +29,7 @@ export const column = () => {
 
 export const visible = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',
@@ -52,7 +52,7 @@ export const visible = () => {
 
 export const width = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',

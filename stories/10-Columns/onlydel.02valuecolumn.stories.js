@@ -14,7 +14,7 @@ export default {
 export const blankwhencopy속성 = () => {
   useEffect(() => {
     const { dataProvider, gridView } = initCustom('realgrid', fields1);
-    dataProvider.setRows(data01);
+    dataProvider.setRows(data1);
 
     gridView.setColumns([
       {
@@ -54,7 +54,7 @@ export const blankwhencopy속성 = () => {
 export const _1398 = () => {
   useEffect(() => {
     const { dataProvider, gridView } = initCustom('realgrid', fields1);
-    dataProvider.setRows(data01);
+    dataProvider.setRows(data1);
 
     gridView.setColumns([
       {
@@ -84,7 +84,7 @@ export const _1398 = () => {
 export const blankwhenexport속성 = () => {
   useEffect(() => {
     const { dataProvider, gridView } = initCustom('realgrid', fields1);
-    dataProvider.setRows(data01);
+    dataProvider.setRows(data1);
 
     gridView.setColumns([
       {

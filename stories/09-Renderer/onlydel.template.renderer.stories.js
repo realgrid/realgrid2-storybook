@@ -1,10 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import {
-  gridContainer,
-  renderMessage,
-  initDataset2,
-  initDataset3,
-} from '../_common';
+import { gridContainer, renderMessage, initDataset } from '../_common';
 
 export default {
   title: '09-렌더러',
@@ -15,7 +10,7 @@ export default {
  */
 export const template속성 = () => {
   useEffect(() => {
-    const { gridView } = initDataset3('realgrid');
+    const { gridView } = initDataset(3);
 
     const renderer = {
       type: 'html',
@@ -35,7 +30,7 @@ export const template속성 = () => {
  */
 export const _1384 = () => {
   useEffect(() => {
-    const { gridView } = initDataset3('realgrid');
+    const { gridView } = initDataset(3);
 
     const renderer = {
       type: 'html',
@@ -53,7 +48,7 @@ export const _1384 = () => {
 
 export const callback속성 = () => {
   useEffect(() => {
-    const { gridView } = initDataset3('realgrid');
+    const { gridView } = initDataset(3);
 
     const renderer = {
       type: 'html',
@@ -73,7 +68,7 @@ export const callback속성 = () => {
 
 export const valueCallback호출테스트 = () => {
   useEffect(() => {
-    const { gridView } = initDataset3('realgrid');
+    const { gridView } = initDataset(3);
 
     const renderer = {
       type: 'html',
@@ -93,7 +88,7 @@ export const valueCallback호출테스트 = () => {
 
 export const object컬럼callBack = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initDataset2();
+    const { dataProvider, gridView } = initDataset(2);
 
     const renderer = {
       type: 'html',
