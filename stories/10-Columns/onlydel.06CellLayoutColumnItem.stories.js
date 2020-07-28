@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, init, renderMessage } from '../_common';
+import { gridContainer, renderMessage, initDataset1 } from '../_common';
 
 export default {
   title: '10-컬럼-CellLayoutColumnItem',
@@ -7,7 +7,7 @@ export default {
 
 export const getLayout = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
     gridView.setColumnLayout([
       'KorName',
       {
@@ -41,7 +41,7 @@ export const getLayout = () => {
 
 export const cellSpan = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
     gridView.setColumnLayout([
       'KorName',
       {
@@ -76,7 +76,7 @@ export const cellSpan = () => {
 
 export const vindex = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
     gridView.setColumnLayout([
       'KorName',
       {
@@ -110,7 +110,7 @@ export const vindex = () => {
 
 export const equalBlank = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
     gridView.setColumnLayout([
       'KorName',
       {

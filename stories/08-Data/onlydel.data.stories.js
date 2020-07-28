@@ -1,11 +1,10 @@
 import { useEffect } from '@storybook/client-api';
 import {
-  init0,
-  init1,
-  init2,
   gridContainer,
   renderMessage,
-  fields01,
+  initCustom,
+  fields1,
+  columns1,
 } from '../_common';
 
 export default {
@@ -31,7 +30,7 @@ const AGE_ROWS = [
 export const View없이Provider채우기 = () => {
   useEffect(() => {
     const dataProvider = new RealGrid.LocalDataProvider();
-    dataProvider.setFields(fields01);
+    dataProvider.setFields(fields1);
     dataProvider.setRows(AGE_ROWS);
     renderMessage(dataProvider.getRows());
   });
@@ -41,7 +40,7 @@ export const View없이Provider채우기 = () => {
 
 export const setRowCount = () => {
   useEffect(() => {
-    const { dataProvider } = init2('realgrid');
+    const { dataProvider } = initCustom('realgrid', fields1, columns1);
     try {
       dataProvider.setRowCount(10);
     } catch (e) {
@@ -54,7 +53,7 @@ export const setRowCount = () => {
 
 export const setRowCountAndSetRows = () => {
   useEffect(() => {
-    const { dataProvider } = init2('realgrid');
+    const { dataProvider } = initCustom('realgrid', fields1, columns1);
     dataProvider.setRowCount(10);
     dataProvider.setRows(AGE_ROWS);
   });
@@ -64,7 +63,7 @@ export const setRowCountAndSetRows = () => {
 
 export const justSetRows = () => {
   useEffect(() => {
-    const { dataProvider } = init2('realgrid');
+    const { dataProvider } = initCustom('realgrid', fields1, columns1);
     dataProvider.setRows(AGE_ROWS);
   });
 
@@ -73,7 +72,7 @@ export const justSetRows = () => {
 
 export const getRows = () => {
   useEffect(() => {
-    const { dataProvider } = init2('realgrid');
+    const { dataProvider } = initCustom('realgrid', fields1, columns1);
     dataProvider.setRows(AGE_ROWS);
 
     renderMessage(dataProvider.getRows());
@@ -87,7 +86,7 @@ export const getRows = () => {
  */
 export const setRowCount0 = () => {
   useEffect(() => {
-    const { dataProvider } = init2('realgrid');
+    const { dataProvider } = initCustom('realgrid', fields1, columns1);
     dataProvider.setRows(AGE_ROWS);
     dataProvider.setRowCount(0);
 
@@ -101,7 +100,7 @@ export const setRowCount0 = () => {
 
 export const removeRows = () => {
   useEffect(() => {
-    const { dataProvider } = init2('realgrid');
+    const { dataProvider } = initCustom('realgrid', fields1, columns1);
     dataProvider.setRows(AGE_ROWS);
 
     dataProvider.removeRow(1);

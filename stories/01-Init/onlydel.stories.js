@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { renderMessage, fields01, columns01 } from '../_common';
+import { renderMessage } from '../_common';
 import './style.css';
 
 export default {

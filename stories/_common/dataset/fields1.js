@@ -1,4 +1,4 @@
-export const fields01 = [
+export const fields1 = [
   {
     fieldName: 'KorName',
     dataType: 'text',

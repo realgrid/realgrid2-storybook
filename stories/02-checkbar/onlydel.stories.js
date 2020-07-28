@@ -1,6 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-
-import { gridContainer, init } from '../_common';
+import { gridContainer, initDataset1 } from '../_common';
 
 export default {
   title: '02-체크바',
@@ -8,7 +7,7 @@ export default {
 
 export const 체크바보이기 = () => {
   useEffect(() => {
-    init('realgrid');
+    initDataset1('realgrid');
   });
 
   return gridContainer();
@@ -16,7 +15,7 @@ export const 체크바보이기 = () => {
 
 export const 체크바_넓이40 = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
     gridView.checkBar.width = 40;
   });
 
@@ -25,7 +24,7 @@ export const 체크바_넓이40 = () => {
 
 export const 체크바감추기 = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
     gridView.checkBar.visible = false;
   });
 
@@ -34,7 +33,7 @@ export const 체크바감추기 = () => {
 
 export const 체크바_모두체크감추기 = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
     gridView.checkBar.showAll = false;
   });
 
@@ -43,7 +42,7 @@ export const 체크바_모두체크감추기 = () => {
 
 export const checkAll = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
     gridView.checkAll(true);
 
     // 헤드의 체크를 강제로 dispatch했지만 각행의 checkbox는 checked 되지 않았다.
@@ -62,7 +61,7 @@ export const checkAll = () => {
 
 export const checkItem = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
     gridView.checkItem(2);
   });
 

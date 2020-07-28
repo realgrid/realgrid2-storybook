@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, init, renderMessage } from '../_common';
+import { gridContainer, renderMessage, initDataset1 } from '../_common';
 
 export default {
   title: '98-이벤트',
@@ -7,13 +7,11 @@ export default {
 
 export const 포커스 = () => {
   useEffect(() => {
-    const { gridView, container } = init(
-      'realgrid',
-      () => {
-        gridView.setFocus();
-      },
-      100
-    );
+    const { gridView, container } = initDataset1('realgrid');
+
+    setTimeout(() => {
+      gridView.setFocus();
+    }, 100);
 
     container.addEventListener('focusin', () => {
       renderMessage('포커스 됨');
