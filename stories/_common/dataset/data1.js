@@ -1,4 +1,4 @@
-export const data01 = [
+export const data1 = [
   {
     KorName: 'Jams',
     SexLabel: '남',

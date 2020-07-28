@@ -1,10 +1,11 @@
 import { useEffect } from '@storybook/client-api';
 import {
   gridContainer,
-  init1,
-  initFields,
   renderMessage,
-  data01,
+  initCustom,
+  fields1,
+  columns1,
+  data1,
 } from '../_common';
 
 export default {
@@ -27,7 +28,7 @@ export const 필드없이컬럼생성 = () => {
 
 export const 노필드데이터넣고컬럼생성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = init1('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid');
     dataProvider.setRows(data01);
     gridView.setColumns([
       {
@@ -41,7 +42,7 @@ export const 노필드데이터넣고컬럼생성 = () => {
 
 export const 컬럼생성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
     dataProvider.setRows(data01);
 
     gridView.setColumns([
@@ -60,7 +61,7 @@ export const 컬럼생성 = () => {
 
 export const movable속성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
     dataProvider.setRows(data01);
 
     gridView.setColumns([
@@ -85,7 +86,7 @@ export const movable속성 = () => {
 
 export const resizable속성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
     dataProvider.setRows(data01);
 
     gridView.setColumns([
@@ -109,7 +110,7 @@ export const resizable속성 = () => {
 
 export const tag속성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
     dataProvider.setRows(data01);
 
     gridView.setColumns([
@@ -133,7 +134,7 @@ export const tag속성 = () => {
 
 export const visible속성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
     dataProvider.setRows(data01);
 
     gridView.setColumns([
@@ -157,7 +158,7 @@ export const visible속성 = () => {
 
 export const width속성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
     dataProvider.setRows(data01);
 
     gridView.setColumns([

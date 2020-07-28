@@ -1,4 +1,4 @@
-export const columns01 = [
+export const columns1 = [
   {
     name: 'KorName',
     fieldName: 'KorName',

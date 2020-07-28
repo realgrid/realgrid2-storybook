@@ -1,10 +1,10 @@
 import { useEffect } from '@storybook/client-api';
 import {
   gridContainer,
-  init1,
-  initFields,
   renderMessage,
-  data01,
+  initCustom,
+  fields1,
+  data1,
 } from '../_common';
 
 export default {
@@ -13,7 +13,7 @@ export default {
 
 export const blankwhencopy속성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
     dataProvider.setRows(data01);
 
     gridView.setColumns([
@@ -53,7 +53,7 @@ export const blankwhencopy속성 = () => {
  */
 export const _1398 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
     dataProvider.setRows(data01);
 
     gridView.setColumns([
@@ -83,7 +83,7 @@ export const _1398 = () => {
 
 export const blankwhenexport속성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
     dataProvider.setRows(data01);
 
     gridView.setColumns([

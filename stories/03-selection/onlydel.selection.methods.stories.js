@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, init, renderMessage } from '../_common';
+import { gridContainer, initDataset1, renderMessage } from '../_common';
 
 export default {
   title: '03-Selection',
@@ -7,7 +7,7 @@ export default {
 
 export const setSelectionBlock = () => {
   useEffect(() => {
-    const { gridView, container } = init('realgrid');
+    const { gridView, container } = initDataset1('realgrid');
     let sel = {
       style: 'block',
       startItem: 2,
@@ -26,7 +26,7 @@ export const setSelectionBlock = () => {
 
 export const setSelectionColumns = () => {
   useEffect(() => {
-    const { gridView, container } = init('realgrid');
+    const { gridView, container } = initDataset1('realgrid');
     let sel = {
       style: 'columns',
       startItem: 2,

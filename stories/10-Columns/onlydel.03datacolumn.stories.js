@@ -1,10 +1,10 @@
 import { useEffect } from '@storybook/client-api';
 import {
   gridContainer,
-  init1,
-  initFields,
   renderMessage,
-  data01,
+  initCustom,
+  fields1,
+  data1,
 } from '../_common';
 
 export default {
@@ -13,8 +13,8 @@ export default {
 
 export const width컬럼생성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initFields('realgrid');
-    dataProvider.setRows(data01);
+    const { dataProvider, gridView } = initCustom('realgrid', fields1);
+    dataProvider.setRows(data1);
 
     gridView.setColumns([
       {

@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, init, renderMessage } from '../_common';
+import { gridContainer, initDataset1, renderMessage } from '../_common';
 
 export default {
   title: '04-Gridheader',
@@ -7,7 +7,7 @@ export default {
 
 export const 헤더감추기 = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
 
     gridView.setHeader({ visible: false });
   });
@@ -18,7 +18,7 @@ export const 헤더감추기 = () => {
 /** header.height 가 정확히 60인지 확인 하는 방법 */
 export const 헤더높이_60 = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
 
     gridView.setHeader({ height: 60 });
 
@@ -37,7 +37,7 @@ export const 헤더높이_60 = () => {
 
 export const 헤더속성_기본값 = () => {
   useEffect(() => {
-    const { gridView } = init('realgrid');
+    const { gridView } = initDataset1('realgrid');
 
     setTimeout(() => {
       const header = gridView.getHeader();

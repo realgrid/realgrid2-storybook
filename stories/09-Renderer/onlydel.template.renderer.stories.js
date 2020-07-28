@@ -1,48 +1,21 @@
 import { useEffect } from '@storybook/client-api';
-import { init1, gridContainer, renderMessage } from '../_common';
+import {
+  gridContainer,
+  renderMessage,
+  initDataset2,
+  initDataset3,
+} from '../_common';
 
 export default {
   title: '09-렌더러',
 };
-
-const fields = [
-  {
-    fieldName: 'templateField',
-    dataType: 'text',
-  },
-];
-
-const columns01 = [
-  {
-    name: 'templateColumn',
-    fieldName: 'templateField',
-    width: 200,
-    header: {
-      text: 'Template cell renderer',
-    },
-  },
-];
-
-const data = [
-  { templateField: 'red' },
-  { templateField: 'blue' },
-  { templateField: 'yellow' },
-  { templateField: 'black' },
-  { templateField: 'green' },
-  { templateField: 'orange' },
-];
 
 /**
  * template cell renderer 에 template 속성 지정
  */
 export const template속성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = init1('realgrid');
-
-    dataProvider.setFields(fields);
-    gridView.setColumns(columns01);
-
-    dataProvider.setRows(data);
+    const { gridView } = initDataset3('realgrid');
 
     const renderer = {
       type: 'html',
@@ -62,12 +35,7 @@ export const template속성 = () => {
  */
 export const _1384 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = init1('realgrid');
-
-    dataProvider.setFields(fields);
-    gridView.setColumns(columns01);
-
-    dataProvider.setRows(data);
+    const { gridView } = initDataset3('realgrid');
 
     const renderer = {
       type: 'html',
@@ -85,13 +53,7 @@ export const _1384 = () => {
 
 export const callback속성 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = init1('realgrid');
-
-    dataProvider.setFields(fields);
-    gridView.setColumns(columns01);
-
-    dataProvider.setRows(data);
-    renderMessage('callback이 호출되지 않았습니다.');
+    const { gridView } = initDataset3('realgrid');
 
     const renderer = {
       type: 'html',
@@ -111,19 +73,12 @@ export const callback속성 = () => {
 
 export const valueCallback호출테스트 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = init1('realgrid');
-
-    dataProvider.setFields(fields);
-    gridView.setColumns(columns01);
-
-    dataProvider.setRows(data);
-    renderMessage('valueCallback이 호출되지 않았습니다.');
+    const { gridView } = initDataset3('realgrid');
 
     const renderer = {
       type: 'html',
       template: "<span style='color: ${some}'>${thing}</span>",
       valueCallback: (grid, model, field) => {
-        console.log(grid, model, field);
         renderMessage('valueCallback이 호출되었습니다.');
         if (field === 'some') return model.value;
         if (field === 'thing') return `색깔은 ${model.value} 입니다.`;
@@ -131,6 +86,24 @@ export const valueCallback호출테스트 = () => {
     };
 
     gridView.setColumnProperty('templateColumn', 'renderer', renderer);
+  });
+
+  return gridContainer();
+};
+
+export const object컬럼callBack = () => {
+  useEffect(() => {
+    const { dataProvider, gridView } = initDataset2();
+
+    const renderer = {
+      type: 'html',
+      callback: (grid, cell) => {
+        console.log(cell.value);
+        return `<p>${cell.value}</p>`;
+      },
+    };
+
+    gridView.setColumnProperty('persons', 'renderer', renderer);
   });
 
   return gridContainer();
