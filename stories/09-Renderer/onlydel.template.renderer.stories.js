@@ -92,13 +92,14 @@ export const object컬럼callBack = () => {
 
     const renderer = {
       type: 'html',
-      callback: (grid, cell) => {
-        console.log(cell.value);
-        return `<p>${cell.value}</p>`;
+      callback: (grid, dataCell) => {
+        const { displayName } = dataCell.value[0];
+        return `${displayName}`;
       },
     };
 
     gridView.setColumnProperty('persons', 'renderer', renderer);
+    renderMessage(typeof dataProvider.getValue(1, 4));
   });
 
   return gridContainer();
@@ -110,15 +111,16 @@ export const object컬럼valueCallback = () => {
 
     const renderer = {
       type: 'html',
-      template: "<span style='color: ${some}'>${thing}</span>",
-      valueCallback: (grid, model, field) => {
-        console.log(model.value);
-        if (field === 'some') return model.value;
-        if (field === 'thing') return `색깔은 ${model.value} 입니다.`;
+      template: "ID: ${id}, 이름: ${name}",
+      valueCallback: (grid, dataCell, field) => {
+        if (field === 'id') return dataCell.value[0].id;
+        if (field === 'name') return dataCell.value[0].displayName;
+        return '여기가지 오면 안된다.';
       },
     };
 
     gridView.setColumnProperty('persons', 'renderer', renderer);
+    renderMessage(typeof dataProvider.getValue(1, 4));
   });
 
   return gridContainer();
