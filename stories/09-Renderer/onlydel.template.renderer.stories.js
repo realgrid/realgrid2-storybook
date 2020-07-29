@@ -103,3 +103,23 @@ export const object컬럼callBack = () => {
 
   return gridContainer();
 };
+
+export const object컬럼valueCallback = () => {
+  useEffect(() => {
+    const { dataProvider, gridView } = initDataset(2);
+
+    const renderer = {
+      type: 'html',
+      template: "<span style='color: ${some}'>${thing}</span>",
+      valueCallback: (grid, model, field) => {
+        console.log(model.value);
+        if (field === 'some') return model.value;
+        if (field === 'thing') return `색깔은 ${model.value} 입니다.`;
+      },
+    };
+
+    gridView.setColumnProperty('persons', 'renderer', renderer);
+  });
+
+  return gridContainer();
+};
