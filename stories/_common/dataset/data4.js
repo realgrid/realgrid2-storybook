@@ -3,7 +3,7 @@ export const data4 = [
     textField: 'textValue',
     numberField: 100,
     booleanField: false,
-    datetimeField: new Date(),
+    datetimeField: new Date("2020-07-08"),
     objectField: ["a", "b", "c"],
   },
   {
