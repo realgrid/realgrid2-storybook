@@ -17,6 +17,6 @@ export const fields2 = [
   },
   {
     fieldName: 'persons',
-    dataTypes: 'object',
+    dataType: 'object',
   },
 ];

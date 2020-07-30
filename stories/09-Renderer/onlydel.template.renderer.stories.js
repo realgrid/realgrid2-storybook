@@ -93,13 +93,21 @@ export const object컬럼callBack = () => {
     const renderer = {
       type: 'html',
       callback: (grid, dataCell) => {
-        const { displayName } = dataCell.value[0];
-        return `${displayName}`;
+        let temp = ''
+        if (!dataCell.value) return temp;
+
+        let users = dataCell.value;
+        if (!Array.isArray(dataCell.value)) users = [].concat(users);
+
+        users.map((user, index) => {
+          temp = temp.concat(`<a href="#${user.id}">${user.displayName}</a> `);
+        });
+
+        return `${temp}`;
       },
     };
 
     gridView.setColumnProperty('persons', 'renderer', renderer);
-    renderMessage(typeof dataProvider.getValue(1, 4));
   });
 
   return gridContainer();
@@ -113,14 +121,19 @@ export const object컬럼valueCallback = () => {
       type: 'html',
       template: "ID: ${id}, 이름: ${name}",
       valueCallback: (grid, dataCell, field) => {
-        if (field === 'id') return dataCell.value[0].id;
-        if (field === 'name') return dataCell.value[0].displayName;
+        let temp = 'unknown';
+        if (!dataCell.value) return temp;
+
+        let users = dataCell.value;
+        if (!Array.isArray(dataCell.value)) users = [].concat(users);
+
+        if (field === 'id') return users[0].id;
+        if (field === 'name') return users[0].displayName;
         return '여기가지 오면 안된다.';
       },
     };
 
     gridView.setColumnProperty('persons', 'renderer', renderer);
-    renderMessage(typeof dataProvider.getValue(1, 4));
   });
 
   return gridContainer();
