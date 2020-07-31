@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, initDataset1, renderMessage } from '../_common';
+import { gridContainer, initDataset, renderMessage } from '../_common';
 
 export default {
   title: '05-ColumnHeader',
@@ -7,7 +7,7 @@ export default {
 
 export const 헤더체크컬럼 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
 
     const checkColumn = gridView.columnByName('KorName');
     checkColumn.header.checkLocation = 'left';
@@ -20,7 +20,7 @@ export const 헤더체크컬럼 = () => {
 
 export const 헤더체크_위치 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
 
     const checkColumn = gridView.columnByName('KorName');
     checkColumn.header.checkLocation = 'rightEdge';
@@ -33,7 +33,7 @@ export const 헤더체크_위치 = () => {
 
 export const text_displayText = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
 
     const checkColumn = gridView.columnByName('SexLabel');
     checkColumn.header.text = '젠더';
@@ -48,7 +48,7 @@ export const text_displayText = () => {
 
 export const 툴팁 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1(
+    const { gridView } = initDataset(
       'realgrid',
       () => {
         const checkColumn = gridView.columnByName('SexLabel');

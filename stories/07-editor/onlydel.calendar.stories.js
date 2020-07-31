@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, initDataset1 } from '../_common';
+import { gridContainer, initDataset } from '../_common';
 
 export default {
   title: '07-편집기',
@@ -7,7 +7,7 @@ export default {
 
 export const 달력팝업 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
 
     setTimeout(() => {
       gridView.setCurrent({

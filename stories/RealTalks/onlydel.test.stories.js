@@ -1,7 +1,7 @@
 import { useEffect } from '@storybook/client-api';
 import {
   gridContainer,
-  initDataset2,
+  initDataset,
   fields2,
   columns2,
   data2,
@@ -28,13 +28,22 @@ export const 그리드생성 = () => {
 
 export const object타입컬럼 = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initDataset2();
+    const { dataProvider, gridView } = initDataset(2);
 
     const renderer = {
       type: 'html',
-      callback: (grid, cell) => {
-        console.log(cell.value);
-        return `<p>${cell.value}</p>`;
+      callback: (grid, dataCell) => {
+        let temp = ''
+        if (!dataCell.value) return temp;
+
+        let users = dataCell.value;
+        if (!Array.isArray(dataCell.value)) users = [].concat(users);
+
+        users.map((user, index) => {
+          temp = temp.concat(`<a href="#${user.id}">${user.displayName}</a> `);
+        });
+
+        return `${temp}`;
       },
     };
 

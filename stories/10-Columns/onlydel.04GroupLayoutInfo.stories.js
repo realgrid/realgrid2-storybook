@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, initDataset1 } from '../_common';
+import { gridContainer, initDataset } from '../_common';
 
 export default {
   title: '10-컬럼-GroupLayoutInfo',
@@ -7,7 +7,7 @@ export default {
 
 export const setColumnLayout = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',
@@ -24,7 +24,7 @@ export const setColumnLayout = () => {
 
 export const 레이아웃그룹헤더 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',
@@ -44,7 +44,7 @@ export const 레이아웃그룹헤더 = () => {
 
 export const 레이아웃그룹디렉션 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',
@@ -65,7 +65,7 @@ export const 레이아웃그룹디렉션 = () => {
 
 export const 레이아웃헤더감추기 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',
@@ -87,7 +87,7 @@ export const 레이아웃헤더감추기 = () => {
 
 export const 레이아웃그룹visible = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',
@@ -109,7 +109,7 @@ export const 레이아웃그룹visible = () => {
 
 export const 레이아웃그룹너비 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',
@@ -134,7 +134,7 @@ export const 레이아웃그룹너비 = () => {
 
 export const 디렉션설정오류테스트1 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',
@@ -159,7 +159,7 @@ export const 디렉션설정오류테스트1 = () => {
 
 export const 디렉션설정오류테스트2 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
     gridView.setColumnLayout([
       'KorName',
       'SexLabel',

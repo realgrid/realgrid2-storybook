@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, initDataset1 } from '../_common';
+import { gridContainer, initDataset } from '../_common';
 
 /** 컴포넌트 */
 export default {
@@ -8,7 +8,7 @@ export default {
 
 export const onShowEditor = () => {
   useEffect(() => {
-    const { gridView, container } = initDataset1('realgrid');
+    const { gridView, container } = initDataset(1);
 
     gridView.onShowEditor = (grid, index, props, attrs) => {
       if (index.column == 'KorName') {

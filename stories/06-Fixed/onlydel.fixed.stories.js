@@ -1,5 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import { gridContainer, initDataset1 } from '../_common';
+import { gridContainer, initDataset } from '../_common';
 
 export default {
   title: '06-Fiexed',
@@ -7,7 +7,7 @@ export default {
 
 export const 행고정 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
 
     gridView.setFixedOptions({
       rowCount: 2,
@@ -19,7 +19,7 @@ export const 행고정 = () => {
 
 export const 열고정 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
 
     gridView.setFixedOptions({
       colCount: 2,
@@ -31,7 +31,7 @@ export const 열고정 = () => {
 
 export const 행열고정 = () => {
   useEffect(() => {
-    const { gridView } = initDataset1('realgrid');
+    const { gridView } = initDataset(1);
 
     gridView.setFixedOptions({
       colCount: 2,

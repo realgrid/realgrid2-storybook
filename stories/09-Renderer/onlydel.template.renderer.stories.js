@@ -1,10 +1,5 @@
 import { useEffect } from '@storybook/client-api';
-import {
-  gridContainer,
-  renderMessage,
-  initDataset2,
-  initDataset3,
-} from '../_common';
+import { gridContainer, renderMessage, initDataset } from '../_common';
 
 export default {
   title: '09-렌더러',
@@ -15,7 +10,7 @@ export default {
  */
 export const template속성 = () => {
   useEffect(() => {
-    const { gridView } = initDataset3('realgrid');
+    const { gridView } = initDataset(3);
 
     const renderer = {
       type: 'html',
@@ -35,7 +30,7 @@ export const template속성 = () => {
  */
 export const _1384 = () => {
   useEffect(() => {
-    const { gridView } = initDataset3('realgrid');
+    const { gridView } = initDataset(3);
 
     const renderer = {
       type: 'html',
@@ -53,7 +48,7 @@ export const _1384 = () => {
 
 export const callback속성 = () => {
   useEffect(() => {
-    const { gridView } = initDataset3('realgrid');
+    const { gridView } = initDataset(3);
 
     const renderer = {
       type: 'html',
@@ -73,7 +68,7 @@ export const callback속성 = () => {
 
 export const valueCallback호출테스트 = () => {
   useEffect(() => {
-    const { gridView } = initDataset3('realgrid');
+    const { gridView } = initDataset(3);
 
     const renderer = {
       type: 'html',
@@ -93,13 +88,48 @@ export const valueCallback호출테스트 = () => {
 
 export const object컬럼callBack = () => {
   useEffect(() => {
-    const { dataProvider, gridView } = initDataset2();
+    const { dataProvider, gridView } = initDataset(2);
 
     const renderer = {
       type: 'html',
-      callback: (grid, cell) => {
-        console.log(cell.value);
-        return `<p>${cell.value}</p>`;
+      callback: (grid, dataCell) => {
+        let temp = ''
+        if (!dataCell.value) return temp;
+
+        let users = dataCell.value;
+        if (!Array.isArray(dataCell.value)) users = [].concat(users);
+
+        users.map((user, index) => {
+          temp = temp.concat(`<a href="#${user.id}">${user.displayName}</a> `);
+        });
+
+        return `${temp}`;
+      },
+    };
+
+    gridView.setColumnProperty('persons', 'renderer', renderer);
+  });
+
+  return gridContainer();
+};
+
+export const object컬럼valueCallback = () => {
+  useEffect(() => {
+    const { dataProvider, gridView } = initDataset(2);
+
+    const renderer = {
+      type: 'html',
+      template: "ID: ${id}, 이름: ${name}",
+      valueCallback: (grid, dataCell, field) => {
+        let temp = 'unknown';
+        if (!dataCell.value) return temp;
+
+        let users = dataCell.value;
+        if (!Array.isArray(dataCell.value)) users = [].concat(users);
+
+        if (field === 'id') return users[0].id;
+        if (field === 'name') return users[0].displayName;
+        return '여기가지 오면 안된다.';
       },
     };
 
