@@ -32,9 +32,18 @@ export const object타입컬럼 = () => {
 
     const renderer = {
       type: 'html',
-      callback: (grid, cell) => {
-        console.log(cell.value);
-        return `<p>${cell.value}</p>`;
+      callback: (grid, dataCell) => {
+        let temp = ''
+        if (!dataCell.value) return temp;
+
+        let users = dataCell.value;
+        if (!Array.isArray(dataCell.value)) users = [].concat(users);
+
+        users.map((user, index) => {
+          temp = temp.concat(`<a href="#${user.id}">${user.displayName}</a> `);
+        });
+
+        return `${temp}`;
       },
     };
 

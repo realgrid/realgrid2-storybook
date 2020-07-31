@@ -82,8 +82,8 @@ export const Template렌더러타입1 = () => {
 export const Template렌더러타입2 = () => {
   useEffect(() => {
     const { gridView, dataProvider } = initDataset(2);
-    renderMessage(`value: ${dataProvider.getValue(1, 4)[0]}`);
-    renderMessage(`typeof: ${typeof dataProvider.getValue(1, 4)[0]}`);
+    renderMessage(`value: ${dataProvider.getValue(0, 4)[0]}`);
+    renderMessage(`typeof: ${typeof dataProvider.getValue(0, 4)[0]}`);
   });
 
   return gridContainer();

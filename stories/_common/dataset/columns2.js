@@ -5,18 +5,19 @@ export const columns2 = [
     header: {
       title: '아이디',
     },
-    width: 60,
+    width: 50,
     readOnly: true,
     editable: false,
   },
   {
     name: 'title',
     fieldName: 'title',
+    width: 50,
   },
   {
     name: 'status',
     fieldName: 'status',
-    width: 60,
+    width: 50,
   },
   {
     name: 'dueDate',
@@ -29,5 +30,6 @@ export const columns2 = [
   {
     name: 'persons',
     fieldName: 'persons',
+    width: 170,
   },
 ];
