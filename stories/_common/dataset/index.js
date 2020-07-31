@@ -13,3 +13,7 @@ export { data3 } from './data3';
 export { fields4 } from './fields4';
 export { columns4 } from './columns4';
 export { data4 } from './data4';
+
+export { wisemk_fields1 } from './wisemk_fields1';
+export { wisemk_columns1 } from './wisemk_columns1';
+export { wisemk_data1 } from './wisemk_data1';
