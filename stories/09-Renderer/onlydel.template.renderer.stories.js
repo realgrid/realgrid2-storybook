@@ -2,7 +2,7 @@ import { useEffect } from '@storybook/client-api';
 import { gridContainer, renderMessage, initDataset } from '../_common';
 
 export default {
-  title: '09-렌더러',
+  title: '09-렌더러-Template',
 };
 
 /**
@@ -16,6 +16,25 @@ export const template속성 = () => {
       type: 'html',
       template:
         "<span style='color: ${value}'>${value}</span> : <span style='color: #fff; background-color: ${value}'>${value}</span>",
+    };
+
+    gridView.setColumnProperty('templateColumn', 'renderer', renderer);
+  });
+
+  return gridContainer();
+};
+
+/**
+ * template cell renderer 에 template 속성 지정
+ */
+export const template링크 = () => {
+  useEffect(() => {
+    const { gridView } = initDataset(3);
+
+    const renderer = {
+      type: 'html',
+      template:
+        "<a href='https://www.w3schools.com/colors/color_tryit.asp?color=${value}'>${value}</a>",
     };
 
     gridView.setColumnProperty('templateColumn', 'renderer', renderer);
@@ -93,7 +112,7 @@ export const object컬럼callBack = () => {
     const renderer = {
       type: 'html',
       callback: (grid, dataCell) => {
-        let temp = ''
+        let temp = '';
         if (!dataCell.value) return temp;
 
         let users = dataCell.value;
