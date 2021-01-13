@@ -16,6 +16,8 @@ const Template = (args) => (
     <Button {...args[1]} />
     <Button {...args[2]} />
     <Button {...args[2]} />
+    <Button {...args[2]} />
+    <Button {...args[2]} />
   </>
 )
 
