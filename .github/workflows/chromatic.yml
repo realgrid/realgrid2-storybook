@@ -13,10 +13,11 @@ jobs:
         with:
           fetch-depth: 0 # 👈 Required to retrieve git history
       - name: Install dependencies
-        run: npm
+        run: npm install 
         # 👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
         uses: chromaui/action@v1
+        run: npm run chromatic
         # Options required to the GitHub Chromatic Action
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
