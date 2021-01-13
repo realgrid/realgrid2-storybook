@@ -1,8 +1,11 @@
 module.exports = {
-  stories: ["../stories/**/*.stories.*"],
-  addons: [
-    // '@storybook/addon-actions',
-    "@storybook/addon-storysource",
-    // '@storybook/addon-notes/register-panel',
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-};
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/preset-create-react-app"
+  ]
+}
