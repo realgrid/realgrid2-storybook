@@ -7,12 +7,17 @@ jobs:
   test:
     runs-on: ubuntu-18.04
     steps:
-    - uses: install dependencies 
-    - run: npm install 
-    - uses: deploy to chromatic 
-    - run: npm run chromatic
-    - uses: chromaui/action@v1
-      with: 
-        token: ${{ secrets.GITHUB_TOKEN }}
-        projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-        
+
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: npm run install
+        # 👇 Adds Chromatic as a step in the workflow
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        # Chromatic GitHub Action options
+        # run: npm run chromatic
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
