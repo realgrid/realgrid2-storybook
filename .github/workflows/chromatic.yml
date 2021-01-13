@@ -7,9 +7,10 @@ jobs:
   test:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: install dependencies 
+    - run: npm install 
+    - uses: deploy to chromatic 
     - run: npm run chromatic
-    - uses: chromaui/action@v1
       with: 
         token: ${{ secrets.GITHUB_TOKEN }}
         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
