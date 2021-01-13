@@ -11,6 +11,7 @@ jobs:
     - run: npm install 
     - uses: deploy to chromatic 
     - run: npm run chromatic
+    - uses: chromaui/action@v1
       with: 
         token: ${{ secrets.GITHUB_TOKEN }}
         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
