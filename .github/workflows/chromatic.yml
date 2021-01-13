@@ -10,7 +10,7 @@ on: push
 jobs:
   chromatic-deployment:
     # Operating System
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     # Job steps
     steps:
       - uses: actions/checkout@v1
